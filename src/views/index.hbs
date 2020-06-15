@@ -1,0 +1,306 @@
+
+    {{!-- <div class="container d-flex" id="productos">
+        <div class="card producto d-none" style="width: 18rem;">
+            <img src="" class="card-img-top imgProducto" alt="...">
+            <div class="card-body">
+              <h5 class="card-title nombreProducto">Card title</h5>
+              <p class="card-text descripcionProducto">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+            <div class="card-body">
+                <a class="btn btn-primary id" href="/comprar" role="button">Comprar</a>
+                <a class="btn btn-primary" href="#" role="button">Añadir a carrito</a>
+            </div>
+          </div>
+    </div> --}}
+
+    
+    
+
+     <script>
+        fetch("http://gsx2json.com/api?id=1UO0V3cDm0XGL1fQ9MGTCASHy5-VqsQE1KH_y7xyrQRs&columns=false").then(procesarDatos);
+
+        function procesarDatos(datos){
+        datos.json().then(crearCatalogo)
+        };
+
+        function crearCatalogo(productos){
+        productos.rows.forEach(crearProducto)
+        console.log(productos)
+        };
+
+        function crearProducto(producto){
+        let carta = document.querySelector(".producto").cloneNode(true)
+        let modalPrueba = document.querySelector(".modalCopia").cloneNode(true)
+
+        carta.querySelector(".imgProducto").src = producto.imagen
+
+        modalPrueba.querySelector(".imgModal").src = producto.imagen
+        modalPrueba.querySelector(".tituloProducto").innerHTML = producto.nombre
+        modalPrueba.querySelector(".imgModal").innerHTML = producto.idproducto
+
+
+
+
+        carta.classList.remove("d-none")
+        document.querySelector(".productos").appendChild(carta)
+        modalPrueba.classList.remove("d-none")
+        document.querySelector(".intento1").appendChild(modalPrueba) 
+        };
+
+     
+       
+
+
+
+</script> 
+
+
+{{!-- carta.querySelector(".descripcionProducto").innerText = producto.descripcion
+
+
+carta.querySelector(".nombreProducto").innerText = producto.nombre
+        carta.querySelector(".descripcionProducto").innerText = producto.descripcion
+
+ --}}
+
+
+ <body id="page-top">
+        <!-- Navigation-->
+        {{!-- <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top realColor" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand js-scroll-trigger" href="#page-top">Amor sin Tacc</a><button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu <i class="fas fa-bars"></i></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">Carta</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">Acerca</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Contacto</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav> --}}
+        <!-- Masthead-->
+        <header class="masthead bg-primary text-white text-center" id="realColor">
+            <div class="container d-flex align-items-center flex-column">
+                <!-- Masthead Avatar Image--><img class="masthead-avatar mb-5" src="assets/img/sinTac.png" alt="" /><!-- Masthead Heading-->
+                <h1 class="masthead-heading text-uppercase mb-0">Amor sin tac</h1>
+                <!-- Icon Divider-->
+                <div class="divider-custom divider-light">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <!-- Masthead Subheading-->
+                <p class="masthead-subheading font-weight-light mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta nulla repudiandae quisquam facere.</p>
+            </div>
+        </header>
+
+
+
+        <!-- Portfolio Section-->
+        <section class="page-section portfolio" id="portfolio">
+            <div class="container">
+                <!-- Portfolio Section Heading-->
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Sin TACC</h2>
+                <!-- Icon Divider-->
+                <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+
+                {{!-- PRUEBA DE ITEMS --}}
+     
+                <div class="row productos" >
+                    <div class="col-md-6 col-lg-4 mb-5 producto d-none">
+                        <a href="#3">
+
+                            <div class="portfolio-item mx-auto productoId" data-toggle="modal" data-target="#portfolioModal1">
+                                <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        </a>
+                        
+                            <img class="img-fluid imgProducto"  src="" alt="" />
+                        </div>
+                    </div>
+                </div>
+            
+
+                
+
+
+                
+            </div>
+        </section>
+        <!-- About Section-->
+        <section class="page-section bg-primary text-white mb-0" id="about">
+            <div class="container">
+                <!-- About Section Heading-->
+                <h2 class="page-section-heading text-center text-uppercase text-dark">Nosotros</h2>
+                <!-- Icon Divider-->
+                <div class="divider-custom divider-light ">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <!-- About Section Content-->
+                <div class="row text-dark">
+                    <div class="col-lg-4 ml-auto"><p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. In natus obcaecati ad autem at, necessitatibus eaque aspernatur! Placeat perspiciatis dolore eum architecto tempora dolor voluptatem beatae ipsa, omnis enim fugit!</p></div>
+                    <div class="col-lg-4 mr-auto"><p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem nulla numquam saepe. Eum, provident? Nemo autem harum error fuga temporibus ab voluptates. Nesciunt vero doloremque tempora, sint vel beatae iure.</p></div>
+                </div>
+
+            </div>
+        </section>
+        <!-- Contact Section-->
+        <section class="page-section" id="contact">
+            <div class="container">
+                <!-- Contact Section Heading-->
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Contact Me</h2>
+                <!-- Icon Divider-->
+                <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <!-- Contact Section Form-->
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19.-->
+                        <form id="contactForm" name="sentMessage" novalidate="novalidate">
+                            <div class="control-group">
+                                <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                                    <label>Name</label><input class="form-control" id="name" type="text" placeholder="Name" required="required" data-validation-required-message="Please enter your name." />
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                                    <label>Email Address</label><input class="form-control" id="email" type="email" placeholder="Email Address" required="required" data-validation-required-message="Please enter your email address." />
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                                    <label>Phone Number</label><input class="form-control" id="phone" type="tel" placeholder="Phone Number" required="required" data-validation-required-message="Please enter your phone number." />
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                                    <label>Message</label><textarea class="form-control" id="message" rows="5" placeholder="Message" required="required" data-validation-required-message="Please enter a message."></textarea>
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+                            <br />
+                            <div id="success"></div>
+                            <div class="form-group"><button class="btn btn-primary btn-xl" id="sendMessageButton" type="submit">Send</button></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+        <!-- -->
+         {{!-- <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-labelledby="portfolioModal1Label" aria-hidden="true">
+            <div class="modal-dialog modal-xl" role="document">
+                <div class="modal-content">
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
+                    </button>
+                    <div class="modal-body text-center">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0 tituloProducto" id="portfolioModal1Label">Pizza Comun</h2>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5 imagenModal" src="" alt="" /><!-- Portfolio Modal - Text-->
+                                    <h1 class="mb-5">AR$499</h1>
+
+                                    <div class="row">
+                                        <div class="col-lg-6 mb-5">
+                                          <div class="list-group" id="list-tab" role="tablist">
+                                            <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Descripcion</a>
+                                            <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Ingredientes</a>
+                                          </div>
+                                        </div>
+                                        <div class="col-lg-6 mb-5">
+                                          <div class="tab-content" id="nav-tabContent">
+                                            <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed culpa ipsa laboriosam in sequi nesciunt? Esse, laudantium libero aliquam consequatur porro repellendus ab, amet quas magni modi a praesentium rem?</div>
+                                            <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque iusto ducimus ipsam aut optio rem sed iure sint excepturi magni nisi, quisquam quis repellat, exercitationem animi laborum accusamus, ad ex.</div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+                                     Boton pedir --}}
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+
+     
+
+        <div class="portfolio-modal modal fade intento1"  id="portfolioModal1" tabindex="-1" role="dialog" aria-labelledby="portfolioModal1Label" aria-hidden="true">
+            <div class="modal-dialog modal-xl modalCopia d-none"  role="document">
+                <div class="modal-content ocultar" id="holaa">
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
+                    </button>
+                    <div class="modal-body text-center">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0 tituloProducto" id="portfolioModal1Label"> aaaa</h2>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5 imgModal" src="" alt="" /><!-- Portfolio Modal - Text-->
+                                    <h1 class="mb-5">AR$499</h1>
+
+                                    <div class="row">
+                                        <div class="col-lg-6 mb-5">
+                                          <div class="list-group" id="list-tab" role="tablist">
+                                            <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Descripcion</a>
+                                            <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Ingredientes</a>
+                                          </div>
+                                        </div>
+                                        <div class="col-lg-6 mb-5">
+                                          <div class="tab-content" id="nav-tabContent">
+                                            <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed culpa ipsa laboriosam in sequi nesciunt? Esse, laudantium libero aliquam consequatur porro repellendus ab, amet quas magni modi a praesentium rem?</div>
+                                            <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque iusto ducimus ipsam aut optio rem sed iure sint excepturi magni nisi, quisquam quis repellat, exercitationem animi laborum accusamus, ad ex.</div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    {{!-- Boton pedir --}}
+                                    <a class="btn btn-primary btn-lg" href="/pedido" target="_blank" role="button">Realizar Pedido</a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
